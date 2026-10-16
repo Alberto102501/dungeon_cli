@@ -58,7 +58,7 @@ class Jugador(Personaje):
             "pociones": [p.to_dict() for p in self.pociones]
         }
 
-class Enemigo(Peronaje):
+class Enemigo(Personaje):
     def __init__(self, nombre, vida, dano_base):
         super().__init__(nombre, vida, vida)
         self.dano_base = dano_base
