@@ -1,6 +1,6 @@
 from models.items import Arma, Pocion 
 
-class Perosnaje:
+class Personaje:
     def __init__(self, nombre, vida, vida_maxima):
         self.nombre = nombre
         self.vida = vida
@@ -58,3 +58,10 @@ class Jugador(Personaje):
             "pociones": [p.to_dict() for p in self.pociones]
         }
 
+class Enemigo(Peronaje):
+    def __init__(self, nombre, vida, dano_base):
+        super().__init__(nombre, vida, vida)
+        self.dano_base = dano_base
+
+    def atacar(self):
+        return self.dano_base
